@@ -2,6 +2,7 @@ package com.example.gymlad;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +10,17 @@ import java.util.List;
 public class Questions extends BaseObservable {
     private List<String> questions;
     private List<Choice> choices = new ArrayList<>();
-    private int currentIndex ;
+    private int currentIndex;
 
     public Questions() {
-        questions = new ArrayList<>() ;
+        questions = new ArrayList<>();
         questions.add("You are : ");
         choices.add(new Choice("Male", "Female"));
-        questions.add("Your goal is : ") ;
-        choices.add(new Choice("Gain weight", "Maintain weight" ,"Lose weight"));
-        currentIndex = 0 ;
+        questions.add("Your goal is to : ");
+        choices.add(new Choice("Gain weight", "Maintain weight", "Lose weight"));
+        questions.add("How active are you ?");
+        choices.add(new Choice("Lightly active","Moderately active","Very active"));
+        currentIndex = 0;
     }
 
     @Bindable
@@ -29,23 +32,28 @@ public class Questions extends BaseObservable {
         return questions.size();
     }
 
-
     public void update() {
-        ++this.currentIndex;
+        if (currentIndex < questions.size())
+            ++this.currentIndex;
+        if (currentIndex < questions.size())
+        notifyChange();
     }
 
     @Bindable
-    public  String getChoice1() {
+    public String getChoice1() {
         return choices.get(currentIndex).getChoice1();
     }
+
     @Bindable
     public String getChoice2() {
         return choices.get(currentIndex).getChoice2();
     }
+
     @Bindable
     public String getChoice3() {
         return choices.get(currentIndex).getChoice3();
     }
+
     @Bindable
     public String getQuestions() {
         return questions.get(currentIndex);
@@ -56,27 +64,27 @@ public class Questions extends BaseObservable {
         String choice2;
         String choice3;
 
-        public Choice(String choice1, String choice2) {
+        Choice(String choice1, String choice2) {
             this.choice1 = choice1;
             this.choice2 = choice2;
             this.choice3 = "";
         }
 
-        public Choice(String choice1, String choice2, String choice3) {
+        Choice(String choice1, String choice2, String choice3) {
             this.choice1 = choice1;
             this.choice2 = choice2;
             this.choice3 = choice3;
         }
 
-        public String getChoice1() {
+        String getChoice1() {
             return choice1;
         }
 
-        public String getChoice2() {
+        String getChoice2() {
             return choice2;
         }
 
-        public String getChoice3() {
+        String getChoice3() {
             return choice3;
         }
     }
