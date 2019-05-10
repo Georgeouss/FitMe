@@ -2,6 +2,7 @@ package com.example.gymlad;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.view.View;
 
 public class Measurements extends BaseObservable {
     private String age;
@@ -23,6 +24,7 @@ public class Measurements extends BaseObservable {
 
     public void setAge(String age) {
         this.age = age;
+        notifyPropertyChanged(BR.buttonDisabled);
     }
     @Bindable
     public String getHeight() {
@@ -31,6 +33,7 @@ public class Measurements extends BaseObservable {
 
     public void setHeight(String height) {
         this.height = height;
+        notifyPropertyChanged(BR.buttonDisabled);
     }
     @Bindable
     public String getCurrentWeight() {
@@ -39,6 +42,7 @@ public class Measurements extends BaseObservable {
 
     public void setCurrentWeight(String currentWeight) {
         this.currentWeight = currentWeight;
+        notifyPropertyChanged(BR.buttonDisabled);
     }
     @Bindable
     public String getGoalWeight() {
@@ -47,5 +51,12 @@ public class Measurements extends BaseObservable {
 
     public void setGoalWeight(String goalWeight) {
         this.goalWeight = goalWeight;
+        notifyPropertyChanged(BR.buttonDisabled);
+    }
+
+    @Bindable
+   public boolean isButtonDisabled(){
+        return this.age.equals("") || this.height.equals("") ||
+                this.currentWeight.equals("") || this.goalWeight.equals("");
     }
 }
