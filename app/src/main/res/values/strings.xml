@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">GymLad</string>
     <string name="title_activity_measurements">Measurements</string>
+    <string name="lading_screen_button_label">tap to continue</string>
+
+    <!--Onboarding-->
+    <string name="onboarding_gender_title">You are: </string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+
+
 </resources>
