@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/onboarding_graph"
+    app:startDestination="@id/genderFragment">
+
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="com.georgi.gymlad.ui.onboarding.GenderFragment"
+        android:label="GenderFragment">
+        <action
+            android:id="@+id/action_genderFragment_to_activityLevelFragment"
+            app:destination="@id/activityLevelFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/activityLevelFragment"
+        android:name="com.georgi.gymlad.ui.onboarding.ActivityLevelFragment"
+        android:label="ActivityLevelFragment">
+        <action
+            android:id="@+id/action_activityLevelFragment_to_goalFragment"
+            app:destination="@id/goalFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/goalFragment"
+        android:name="com.georgi.gymlad.ui.onboarding.GoalFragment"
+        android:label="GoalFragment" />
+</navigation>

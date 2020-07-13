@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">GymLad</string>
     <string name="title_activity_measurements">Measurements</string>
+    <string name="lading_screen_button_label">tap to continue</string>
+
+    <!--Onboarding-->
+    <string name="onboarding_gender_title">You are :</string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+    <string name="onboarding_activity_level_title">How active are you :</string>
+    <string name="beginner_label">Beginner</string>
+    <string name="advanced_label">Advanced</string>
+    <string name="intermediate_label">Intermediate</string>
+    <string name="onboarding_goal_title">Your goal is :</string>
+    <string name="goal_lose_weight">Lose weight</string>
+    <string name="goal_gain_weight">Gain weight</string>
+    <string name="goal_maintain_weight">Maintain weight</string>
+
 </resources>
