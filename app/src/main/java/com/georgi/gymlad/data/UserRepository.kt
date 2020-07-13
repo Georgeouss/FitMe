@@ -3,8 +3,11 @@ package com.georgi.gymlad.data
 import android.content.SharedPreferences
 import com.georgi.gymlad.ActivityLevel
 import com.georgi.gymlad.Constants.UserSharedPreferences.ACTIVITY_LEVEL
-import com.georgi.gymlad.Constants.UserSharedPreferences.IS_ONBOARDING_COMPLETED
+import com.georgi.gymlad.Constants.UserSharedPreferences.GENDER
+import com.georgi.gymlad.Constants.UserSharedPreferences.GOAL
 import com.georgi.gymlad.Constants.UserSharedPreferences.USER_CREDENTIALS
+import com.georgi.gymlad.Gender
+import com.georgi.gymlad.Goal
 import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton
@@ -15,6 +18,19 @@ class UserRepository
     companion object {
         val DEFAULT_LEVEL: ActivityLevel = ActivityLevel.BEGINNER
     }
+
+    var gender: Gender
+        get() {
+            val gender = sharedPreferences.getString(GENDER, "")
+            return if (gender.isNullOrEmpty()) {
+                Gender.MALE
+            } else {
+                Gender.valueOf(gender)
+            }
+        }
+        set(value) {
+            sharedPreferences.edit().putString(GENDER, value.name).apply()
+        }
 
     var activityLevel: ActivityLevel
         get() {
@@ -29,11 +45,16 @@ class UserRepository
             sharedPreferences.edit().putString(ACTIVITY_LEVEL, value.name).apply()
         }
 
-    var isOnboardingCompleted: Boolean
+    var goal: Goal
         get() {
-            return sharedPreferences.getBoolean(IS_ONBOARDING_COMPLETED, false)
+            val goal = sharedPreferences.getString(GOAL, "")
+            return if (goal.isNullOrEmpty()) {
+                Goal.MAINTAIN_WEIGHT
+            } else {
+                Goal.valueOf(goal)
+            }
         }
         set(value) {
-            sharedPreferences.edit().putBoolean(IS_ONBOARDING_COMPLETED, value).apply()
+            sharedPreferences.edit().putString(GOAL, value.name).apply()
         }
 }
