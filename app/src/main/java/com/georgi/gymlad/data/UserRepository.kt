@@ -2,6 +2,7 @@ package com.georgi.gymlad.data
 
 import android.content.SharedPreferences
 import com.georgi.gymlad.ActivityLevel
+import com.georgi.gymlad.Constants
 import com.georgi.gymlad.Constants.UserSharedPreferences.ACTIVITY_LEVEL
 import com.georgi.gymlad.Constants.UserSharedPreferences.GENDER
 import com.georgi.gymlad.Constants.UserSharedPreferences.GOAL
@@ -56,5 +57,17 @@ class UserRepository
         }
         set(value) {
             sharedPreferences.edit().putString(GOAL, value.name).apply()
+        }
+
+    var isOnboardingCompleted: Boolean
+        get() {
+            return sharedPreferences.getBoolean(
+                Constants.UserSharedPreferences.IS_ONBOARDING_COMPLETED,
+                false
+            )
+        }
+        set(value) {
+            sharedPreferences.edit()
+                .putBoolean(Constants.UserSharedPreferences.IS_ONBOARDING_COMPLETED, value).apply()
         }
 }

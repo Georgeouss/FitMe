@@ -5,7 +5,7 @@ import com.georgi.gymlad.ui.SplashActivity
 import com.georgi.gymlad.ui.onboarding.ActivityLevelFragment
 import com.georgi.gymlad.ui.onboarding.GenderFragment
 import com.georgi.gymlad.ui.onboarding.GoalFragment
-import com.georgi.gymlad.ui.onboarding.OnboardingActivity
+import com.georgi.gymlad.ui.workouts.RunActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -30,4 +30,5 @@ interface AppComponent {
     fun inject(genderFragment: GenderFragment)
     fun inject(activityLevelFragment: ActivityLevelFragment)
     fun inject(goalFragment: GoalFragment)
+    fun inject(runActivity: RunActivity)
 }

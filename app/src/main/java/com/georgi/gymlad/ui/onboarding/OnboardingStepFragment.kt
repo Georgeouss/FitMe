@@ -9,6 +9,7 @@ import com.georgi.gymlad.data.OnOnboardingOptionClick
 import com.georgi.gymlad.databinding.FragmentOnboardingOptionsBinding
 import com.georgi.gymlad.di.ViewModelFactory
 import com.georgi.gymlad.ui.BaseFragment
+import com.georgi.gymlad.viewmodel.onboarding.OnboardingStepViewModel
 import javax.inject.Inject
 
 abstract class OnboardingStepFragment<VM : OnboardingStepViewModel> :
