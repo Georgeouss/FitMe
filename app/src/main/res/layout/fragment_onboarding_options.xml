@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.georgi.gymlad.ui.onboarding.OnboardingStepViewModel" />
+            type="com.georgi.gymlad.viewmodel.onboarding.OnboardingStepViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

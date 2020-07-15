@@ -16,4 +16,11 @@
     <string name="goal_gain_weight">Gain weight</string>
     <string name="goal_maintain_weight">Maintain weight</string>
 
+    <!--    Run Workout-->
+    <string name="distance_label">DISTANCE :</string>
+    <string name="duration_label">DURATION :</string>
+    <string name="speed_label">SPEED</string>
+    <string name="start_button_label">START</string>
+    <string name="end_button_label">FINISH</string>
+
 </resources>

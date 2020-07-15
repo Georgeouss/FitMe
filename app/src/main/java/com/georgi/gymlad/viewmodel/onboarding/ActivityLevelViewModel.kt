@@ -1,12 +1,9 @@
 package com.georgi.gymlad.viewmodel.onboarding
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import com.georgi.gymlad.ActivityLevel
 import com.georgi.gymlad.R
 import com.georgi.gymlad.data.Option
 import com.georgi.gymlad.data.UserRepository
-import com.georgi.gymlad.ui.onboarding.OnboardingStepViewModel
 import javax.inject.Inject
 
 class ActivityLevelViewModel

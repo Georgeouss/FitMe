@@ -1,4 +1,4 @@
-package com.georgi.gymlad.ui.onboarding
+package com.georgi.gymlad.viewmodel.onboarding
 
 import androidx.lifecycle.ViewModel
 import com.georgi.gymlad.data.Option

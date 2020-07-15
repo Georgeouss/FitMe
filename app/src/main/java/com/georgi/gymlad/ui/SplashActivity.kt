@@ -10,6 +10,7 @@ import com.georgi.gymlad.R
 import com.georgi.gymlad.databinding.ActivitySplashBinding
 import com.georgi.gymlad.di.ViewModelFactory
 import com.georgi.gymlad.ui.onboarding.OnboardingActivity
+import com.georgi.gymlad.ui.workouts.RunActivity
 import com.georgi.gymlad.util.getComponent
 import com.georgi.gymlad.viewmodel.SplashViewModel
 import javax.inject.Inject
@@ -35,6 +36,12 @@ class SplashActivity : AppCompatActivity() {
             i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(i)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        })
+
+        viewModel.workoutScreen.observe(this, Observer {
+            val intent = Intent(this, RunActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         })
     }
 }

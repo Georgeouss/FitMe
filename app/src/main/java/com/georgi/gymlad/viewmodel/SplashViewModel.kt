@@ -6,9 +6,16 @@ import com.georgi.gymlad.data.UserRepository
 import javax.inject.Inject
 
 class SplashViewModel
-@Inject constructor() : ViewModel() {
+@Inject constructor(private val userRepository: UserRepository) : ViewModel() {
 
     val startOnBoardingEvent = SingleLiveEvent<Unit>()
+    val workoutScreen = SingleLiveEvent<Unit>()
+
+    init {
+        if (userRepository.isOnboardingCompleted) {
+            workoutScreen.call()
+        }
+    }
 
     fun onButtonClick() {
         startOnBoardingEvent.call()

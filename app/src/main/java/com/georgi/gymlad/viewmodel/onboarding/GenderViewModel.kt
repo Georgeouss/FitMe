@@ -4,7 +4,6 @@ import com.georgi.gymlad.Gender
 import com.georgi.gymlad.R
 import com.georgi.gymlad.data.Option
 import com.georgi.gymlad.data.UserRepository
-import com.georgi.gymlad.ui.onboarding.OnboardingStepViewModel
 import javax.inject.Inject
 
 class GenderViewModel

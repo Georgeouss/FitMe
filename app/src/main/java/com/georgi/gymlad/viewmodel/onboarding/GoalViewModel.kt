@@ -4,7 +4,6 @@ import com.georgi.gymlad.Goal
 import com.georgi.gymlad.R
 import com.georgi.gymlad.data.Option
 import com.georgi.gymlad.data.UserRepository
-import com.georgi.gymlad.ui.onboarding.OnboardingStepViewModel
 import javax.inject.Inject
 
 class GoalViewModel
@@ -26,6 +25,7 @@ class GoalViewModel
 
     override fun onOptionCLick(item: Any) {
         userRepository.goal = item as? Goal ?: Goal.MAINTAIN_WEIGHT
+        userRepository.isOnboardingCompleted = true
         nextScreenEvent.call()
     }
 }
